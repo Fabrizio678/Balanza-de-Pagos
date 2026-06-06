@@ -18,6 +18,9 @@ venv/
 .vscode/
 .idea/
 
+# Output images (generated from notebook)
+output/
+
 # OS
 Thumbs.db
 .DS_Store
