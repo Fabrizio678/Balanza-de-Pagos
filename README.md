@@ -1,15 +1,15 @@
-# Balanza de Pagos - BCRP
+# Balance of Payments - BCRP
 
-Análisis de la Balanza de Pagos del Perú usando datos del BCRP (Banco Central de Reserva del Perú).
+Analysis of Peru's Balance of Payments using data from BCRP (Central Reserve Bank of Peru).
 
-## Estructura del proyecto
+## Project Structure
 
 ```
 Balanza de Pagos/
 ├── assets/
-│   └── Balanza_de_Pagos.csv    # Data fuente (ISO-8859-1)
+│   └── Balanza_de_Pagos.csv    # Source data (ISO-8859-1)
 ├── output/
-│   ├── tables/                  # Tablas en formato APA (PNG)
+│   ├── tables/                  # APA-formatted tables (PNG)
 │   │   ├── tabla_1_resumen_bp.png
 │   │   ├── tabla_2_componentes_cc.png
 │   │   ├── tabla_3_desglose_bienes_servicios.png
@@ -17,70 +17,70 @@ Balanza de Pagos/
 │   │   ├── tabla_5_componentes_cf.png
 │   │   ├── tabla_6_activos_pasivos_sector.png
 │   │   └── tabla_7_resultado_bp_rin.png
-│   └── graph/                   # Gráficos (PNG)
+│   └── graph/                   # Charts (PNG)
 │       ├── grafico_1_resumen_bp_apilado.png
 │       ├── grafico_2_balanza_comercial_servicios.png
 │       ├── grafico_3_ingreso_primario_secundario.png
 │       ├── grafico_4_cf_componentes.png
 │       ├── grafico_5_activos_pasivos_sector.png
 │       └── grafico_6_resultado_bp_rin.png
-├── analisis.ipynb               # Notebook principal
-├── requirements.txt             # Dependencias
+├── analisis.ipynb               # Main notebook
+├── requirements.txt             # Dependencies
 ├── README.md
 └── .gitignore
 ```
 
-## Variables del dataset
+## Dataset Variables
 
-El dataset contiene 27 series de la Balanza de Pagos del Perú (2016–2026), en millones de US$.
+The dataset contains 27 series from Peru's Balance of Payments (2016–2026), in millions of US$.
 
-### Cuenta Corriente
+### Current Account
 
-| Variable | Descripción |
+| Variable | Description |
 |----------|-------------|
-| `CC_Bienes_Export` | Exportaciones de bienes |
-| `CC_Bienes_Import` | Importaciones de bienes |
-| `CC_Bienes` | Saldo neto de bienes = Export - Import |
-| `CC_Servicios_Export` | Exportaciones de servicios |
-| `CC_Servicios_Import` | Importaciones de servicios |
-| `CC_Servicios` | Saldo neto de servicios = Export - Import |
-| `CC_Ingreso_Primario_Pub` | Ingreso primario - sector público |
-| `CC_Ingreso_Primario_Priv` | Ingreso primario - sector privado |
-| `CC_Ingreso_Primario` | Ingreso primario total = Pub + Priv |
-| `CC_Remesas` | Remesas (componente del ingreso secundario) |
-| `CC_Ingreso_Secundario` | Ingreso secundario (incluye remesas) |
+| `CC_Bienes_Export` | Goods exports |
+| `CC_Bienes_Import` | Goods imports |
+| `CC_Bienes` | Net goods balance = Exports - Imports |
+| `CC_Servicios_Export` | Services exports |
+| `CC_Servicios_Import` | Services imports |
+| `CC_Servicios` | Net services balance = Exports - Imports |
+| `CC_Ingreso_Primario_Pub` | Primary income - public sector |
+| `CC_Ingreso_Primario_Priv` | Primary income - private sector |
+| `CC_Ingreso_Primario` | Total primary income = Public + Private |
+| `CC_Remesas` | Remittances (secondary income component) |
+| `CC_Ingreso_Secundario` | Secondary income (includes remittances) |
 | `Cuenta_Corriente` | = CC_Bienes + CC_Servicios + CC_Ingreso_Primario + CC_Ingreso_Secundario |
 
-### Cuenta Financiera
+### Financial Account
 
-**Convención de signos del BCRP:**
-- **CF positivo** = aumento de activos externos netos (salida de capitales)
-- **CF negativo** = aumento de pasivos externos netos (entrada de capitales)
+**BCRP sign convention:**
+- **Positive CF** = increase in net external assets (capital outflow)
+- **Negative CF** = increase in net external liabilities (capital inflow)
 
-| Variable | Descripción |
+| Variable | Description |
 |----------|-------------|
-| `CF_SectorPrivado_Activos` | Activos del sector privado |
-| `CF_SectorPrivado_Pasivos` | Pasivos del sector privado |
-| `CF_SectorPrivado` | Sector privado neto = Activos - Pasivos |
-| `CF_SectorPublico_Activos` | Activos del sector público |
-| `CF_SectorPublico_Pasivos` | Pasivos del sector público |
-| `CF_SectorPublico` | Sector público neto = Activos - Pasivos |
-| `CF_CortoPlazo_Activos` | Activos de corto plazo |
-| `CF_CortoPlazo_Pasivos` | Pasivos de corto plazo |
-| `CF_CortoPlazo` | Corto plazo neto = Activos - Pasivos |
+| `CF_SectorPrivado_Activos` | Private sector assets |
+| `CF_SectorPrivado_Pasivos` | Private sector liabilities |
+| `CF_SectorPrivado` | Net private sector = Assets - Liabilities |
+| `CF_SectorPublico_Activos` | Public sector assets |
+| `CF_SectorPublico_Pasivos` | Public sector liabilities |
+| `CF_SectorPublico` | Net public sector = Assets - Liabilities |
+| `CF_CortoPlazo_Activos` | Short-term assets |
+| `CF_CortoPlazo_Pasivos` | Short-term liabilities |
+| `CF_CortoPlazo` | Net short-term = Assets - Liabilities |
 | `Cuenta_Financiera` | = CF_Sector_Privado + CF_SectorPublico + CF_CortoPlazo |
 
-### Resultado y RIN
+### Result and RIN
 
-| Variable | Descripción |
+| Variable | Description |
 |----------|-------------|
-| `Resultado_BP` | Resultado de Balanza de Pagos |
-| `Errores_Omisiones` | Errores y omisiones netos |
-| `Financ_Excepcional` | Financiamiento excepcional |
-| `Efecto_Valuacion` | Efecto de valuación del RIN |
-| `Var_Saldo_RIN` | Variación del saldo de RIN |
+| `Resultado_BP` | Balance of Payments result |
+| `Errores_Omisiones` | Net errors and omissions |
+| `Financ_Excepcional` | Exceptional financing |
+| `Efecto_Valuacion` | RIN valuation effect |
+| `Var_Saldo_RIN` | Change in RIN balance |
 
-### Fórmulas clave
+### Key Formulas
 
 ```
 Cuenta_Corriente = CC_Bienes + CC_Servicios + CC_Ingreso_Primario + CC_Ingreso_Secundario
@@ -94,36 +94,36 @@ Resultado_BP       = Cuenta_Corriente - Cuenta_Financiera + Errores_Omisiones + 
 Var_Saldo_RIN      = Resultado_BP + Efecto_Valuacion
 ```
 
-**Nota:** El Resultado de Balanza de Pagos RESTA la Cuenta Financiera porque el BCRP registra CF negativo cuando hay entrada de capitales. Restar un valor negativo equivale a sumar la entrada neta de capitales.
+**Note:** The Balance of Payments result SUBTRACTS the Financial Account because BCRP records CF as negative when there is capital inflow. Subtracting a negative value is equivalent to adding the net capital inflow.
 
-## Tablas (output/tables/)
+## Tables (output/tables/)
 
-| Archivo | Contenido |
+| File | Content |
 |---------|-----------|
-| `tabla_1_resumen_bp.png` | Resumen de Balanza de Pagos: CC, CF, EO, FE, Resultado_BP |
-| `tabla_2_componentes_cc.png` | Componentes de Cuenta Corriente: Bienes, Servicios, Ingresos |
-| `tabla_3_desglose_bienes_servicios.png` | Desglose de Bienes y Servicios: Export, Import, Saldo neto |
-| `tabla_4_ingreso_primario_secundario.png` | Ingreso Primario (Pub, Priv) y Secundario (Remesas) |
-| `tabla_5_componentes_cf.png` | Componentes de Cuenta Financiera por sector |
-| `tabla_6_activos_pasivos_sector.png` | Activos y Pasivos desglosados por sector |
-| `tabla_7_resultado_bp_rin.png` | Resultado BP, Efecto Valuación y Variación RIN |
+| `tabla_1_resumen_bp.png` | Balance of Payments summary: CC, FA, EO, EF, BP Result |
+| `tabla_2_componentes_cc.png` | Current Account components: Goods, Services, Income |
+| `tabla_3_desglose_bienes_servicios.png` | Goods and Services breakdown: Exports, Imports, Net balance |
+| `tabla_4_ingreso_primario_secundario.png` | Primary Income (Public, Private) and Secondary Income (Remittances) |
+| `tabla_5_componentes_cf.png` | Financial Account components by sector |
+| `tabla_6_activos_pasivos_sector.png` | Assets and Liabilities broken down by sector |
+| `tabla_7_resultado_bp_rin.png` | BP Result, Valuation Effect and RIN Variation |
 
-Las tablas siguen el formato **APA 7ma edición**: solo líneas horizontales (superior, bajo encabezado, inferior), fuente serif (Times New Roman), encabezados en negrita, valores numéricos centrados, año como entero.
+Tables follow **APA 7th edition** format: horizontal lines only (top, below header, bottom), serif font (Times New Roman), bold headers, centered numerical values, year as integer.
 
-## Gráficos (output/graph/)
+## Charts (output/graph/)
 
-| Archivo | Contenido |
+| File | Content |
 |---------|-----------|
-| `grafico_1_resumen_bp_apilado.png` | Barras apiladas de CC, CF, EO, FE + línea de Resultado_BP |
-| `grafico_2_balanza_comercial_servicios.png` | Balanza Comercial y de Servicios (Export, Import, Saldo) |
-| `grafico_3_ingreso_primario_secundario.png` | Ingreso Primario (Pub, Priv, Total) y Secundario + Remesas |
-| `grafico_4_cf_componentes.png` | Barras apiladas de CF por sector + línea de CF neta |
-| `grafico_5_activos_pasivos_sector.png` | Activos vs Pasivos por sector (3 paneles) |
-| `grafico_6_resultado_bp_rin.png` | Resultado BP, Efecto Valuación y Variación RIN |
+| `grafico_1_resumen_bp_apilado.png` | Stacked bars of CC, FA, EO, EF + BP Result line |
+| `grafico_2_balanza_comercial_servicios.png` | Trade and Services balance (Exports, Imports, Balance) |
+| `grafico_3_ingreso_primario_secundario.png` | Primary Income (Public, Private, Total) and Secondary + Remittances |
+| `grafico_4_cf_componentes.png` | Stacked bars of FA by sector + net FA line |
+| `grafico_5_activos_pasivos_sector.png` | Assets vs Liabilities by sector (3 panels) |
+| `grafico_6_resultado_bp_rin.png` | BP Result, Valuation Effect and RIN Variation |
 
-Todos los gráficos incluyen nota al pie: *"Elaboracion propia con datos del BCRP."*
+All charts include a footnote: *"Own elaboration with data from BCRP."*
 
-## Requisitos
+## Requirements
 
 ```
 pandas>=2.0
@@ -132,7 +132,7 @@ matplotlib>=3.7
 openpyxl>=3.1
 ```
 
-## Uso
+## Usage
 
 ```bash
 python -m venv venv
@@ -141,8 +141,8 @@ pip install -r requirements.txt
 jupyter notebook analisis.ipynb
 ```
 
-Las imágenes se generan automáticamente en `output/tables/` y `output/graph/` al ejecutar el notebook.
+Images are automatically generated in `output/tables/` and `output/graph/` when running the notebook.
 
-## Fuente
+## Source
 
 [BCRP - Estadísticas](https://www.bcrp.gob.pe/estadisticas.html)
