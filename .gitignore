@@ -18,6 +18,19 @@ venv/
 .vscode/
 .idea/
 
+# LaTeX build artifacts
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+
 # OS
 Thumbs.db
 .DS_Store

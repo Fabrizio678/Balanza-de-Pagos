@@ -1,0 +1,423 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+\usetheme{metropolis}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\graphicspath{{img/}{./}}
+
+\newcommand{\grafico}[1]{%
+  \IfFileExists{img/#1}{\includegraphics[width=\linewidth]{#1}}%
+  {\fbox{\parbox[c][3.2cm][c]{\linewidth}{\centering\ttfamily\scriptsize #1\\[.4em]\normalfont\itshape(archivo no encontrado)}}}%
+}
+
+\definecolor{navy}{HTML}{1F2A44}
+\definecolor{navylight}{HTML}{2E3E5C}
+\definecolor{acc}{HTML}{E8A13A}
+\setbeamercolor{frametitle}{bg=navy}
+\setbeamercolor{title separator}{fg=acc}
+\setbeamercolor{progress bar}{fg=acc}
+\setbeamercolor{alerted text}{fg=acc}
+\metroset{block=fill}
+
+\setbeamertemplate{section in toc}{%
+  \leavevmode\vspace{0.5em}%
+  \tikz[baseline=-0.6ex]\node[circle,fill=acc,text=white,inner sep=3pt,font=\footnotesize\bfseries]{\inserttocsectionnumber};%
+  \hspace{0.7em}{\color{navy}\large\inserttocsection}\par}
+\setbeamertemplate{subsection in toc}{}
+
+\title{La Balanza de Pagos del Perú}
+\subtitle{Marco Conceptual y Evolución de las Cuentas Externas (2016--2025)}
+\date{Julio del 2026}
+
+\begin{document}
+
+{
+\setbeamercolor{background canvas}{bg=white}
+\begin{frame}[plain]
+  \centering
+  \vspace{0.3em}
+  \begin{tikzpicture}
+    \node[fill=navy, rounded corners=6pt, inner sep=14pt, text width=0.93\textwidth, align=center] {
+      {\color{white}\LARGE La Balanza de Pagos del Perú}\\[0.4em]
+      {\color{white!85}\normalsize Marco Conceptual y Evolución de las Cuentas Externas (2016--2025)}
+    };
+  \end{tikzpicture}
+
+  \vspace{1.4em}
+  {\large
+  Arteaga Huamán, Luis Moisés \quad\ Carrión Espinoza, Leonardo Fabrizio \quad\ De la Cruz Pérez, Alejandro Arly
+  }
+
+  \vspace{1.4em}
+  {\normalsize
+  Universidad Científica del Sur\\
+  Curso: Macroeconomía II\\
+  Docente: Marco Plaza Vidaurre\\
+  }
+
+  \vspace{1.2em}
+  {\large Julio del 2026}
+
+  \vspace{1.0em}
+  \includegraphics[height=2cm]{ucsur.png}
+\end{frame}
+}
+
+\begin{frame}{Contenido}
+  \vspace{0.8em}
+  \begin{columns}\begin{column}{0.9\textwidth}
+    \tableofcontents
+  \end{column}\end{columns}
+\end{frame}
+
+\section{Introducción}
+\begin{frame}{Introducción}
+  \begin{itemize}
+    \item La \alert{balanza de pagos} registra todas las transacciones de una economía con el resto del mundo y refleja la solidez de su posición externa.
+    \item El Perú es una economía \textbf{pequeña, abierta y dependiente de materias primas}: su sector externo está atado a los precios internacionales de los metales.
+    \item \textbf{Objetivo:} describir la estructura y la evolución de las cuentas externas peruanas entre \textbf{2016 y 2025}, con datos oficiales del BCRP.
+    \item Muchos movimientos responden a eventos concretos: COVID-19, guerra Rusia--Ucrania, El Niño y el ciclo de precios de los metales.
+  \end{itemize}
+\end{frame}
+
+\section{Marco Conceptual}
+\begin{frame}{¿Qué es la balanza de pagos?}
+  \begin{itemize}
+    \item Registro contable y sistemático de las transacciones entre \textbf{residentes y no residentes} en un período.
+    \item Se rige por el principio de \textbf{partida doble} (cada operación genera un crédito y un débito) y el criterio del \textbf{devengado}.
+    \item En el Perú la elabora el \textbf{BCRP}, siguiendo el Manual del FMI (MBPI6) para asegurar comparabilidad internacional.
+  \end{itemize}
+  \vfill
+  \begin{block}{Tres grandes bloques}
+    Cuenta Corriente \;$\rightarrow$\; Cuenta Financiera \;$\rightarrow$\; Reservas Internacionales Netas (RIN)
+  \end{block}
+\end{frame}
+
+\begin{frame}{Componentes de las cuentas externas}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \textbf{Cuenta Corriente (flujos reales)}
+      \begin{itemize}\small
+        \item Balanza comercial de bienes (FOB)
+        \item Balanza de servicios
+        \item Ingreso primario (renta de factores)
+        \item Ingreso secundario (remesas)
+      \end{itemize}
+      \vspace{0.5em}
+      \textbf{Cuenta Financiera (activos/pasivos)}
+      \begin{itemize}\small
+        \item Sector privado (IDE, cartera, créditos)
+        \item Sector público (bonos soberanos)
+        \item Capitales de corto plazo
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \textbf{Reservas Internacionales Netas}
+      \begin{itemize}\small
+        \item Colchón financiero ante choques externos
+        \item Capacidad de intervención cambiaria
+        \item Respaldo de solvencia (menor riesgo país)
+      \end{itemize}
+      \vspace{0.8em}
+      \begin{alertblock}{Convención de signo (MBPI6)}
+        \footnotesize La Cuenta Financiera se mide como \emph{Activos $-$ Pasivos}: un valor \textbf{negativo} = \textbf{entrada} neta de capitales; positivo = salida/acumulación de activos.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Identidades Contables}
+\begin{frame}{Identidades fundamentales}
+  \textbf{1. Resultado de la balanza de pagos} (equivale a la variación de RIN por flujos):
+  \begin{equation*}
+    CC - CF + E\&O + \text{Fin.Exc.} = \Delta RIN
+  \end{equation*}
+  {\footnotesize $CC$: cuenta corriente; $CF$: cuenta financiera; $E\&O$: errores y omisiones; Fin.Exc.: financiamiento excepcional.}
+
+  \vspace{0.6em}
+  \textbf{2. Desagregación de la cuenta corriente:}
+  \begin{equation*}
+    CC = BC_{\text{bienes}} + BC_{\text{servicios}} + IP + IS
+  \end{equation*}
+  {\footnotesize $BC$: balanza comercial; $IP$: ingreso primario; $IS$: ingreso secundario.}
+
+  \vspace{0.6em}
+  \textbf{3. Enfoque ahorro--inversión:}
+  \begin{equation*}
+    CC = S - I
+  \end{equation*}
+  {\footnotesize $S$: ahorro nacional; $I$: inversión interna. Un superávit sostenido implica $S > I$.}
+\end{frame}
+
+\section{Análisis 2016--2025}
+\begin{frame}{Panorama general de la balanza de pagos}
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{5pt}\renewcommand{\arraystretch}{1.05}
+  \begin{tabular}{lrrrr}
+    \toprule
+    \textbf{Año} & \textbf{Cta. Corriente} & \textbf{Cta. Financiera} & \textbf{Err. y Omis.} & \textbf{Resultado BP} \\
+    \midrule
+    2016 & $-4\,646$ & $-5\,716$ & $-901$ & $169$ \\
+    2017 & $-2\,346$ & $-3\,065$ & $910$ & $1\,629$ \\
+    2018 & $-2\,853$ & $-2\,055$ & $-2\,832$ & $-3\,629$ \\
+    2019 & $-1\,662$ & $-7\,660$ & $911$ & $6\,909$ \\
+    2020 & $1\,324$ & $-6\,105$ & $-2\,127$ & $5\,301$ \\
+    2021 & $-5\,205$ & $-15\,385$ & $-5\,770$ & $4\,410$ \\
+    2022 & $-10\,060$ & $-8\,184$ & $-3\,213$ & $-5\,089$ \\
+    2023 & $1\,289$ & $426$ & $-3\,624$ & $-2\,760$ \\
+    2024 & $6\,969$ & $-1\,878$ & $-1\,793$ & $7\,054$ \\
+    2025 & $12\,005$ & $-3\,342$ & $-7\,492$ & $7\,855$ \\
+    \bottomrule
+  \end{tabular}
+  \vspace{0.6em}
+  \begin{flushright}\tiny Elaboración propia con datos del BCRP (millones de US\$).\end{flushright}
+  \normalsize
+  \begin{itemize}\footnotesize
+    \item Giro de déficits recurrentes (2016--2022) a \textbf{superávits récord} en 2024--2025.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Cuenta corriente: el motor comercial}
+  \begin{columns}[T]
+    \begin{column}{0.58\textwidth}
+      \centering
+      \grafico{grafico_2_balanza_comercial_servicios.png}
+    \end{column}
+    \begin{column}{0.42\textwidth}\footnotesize
+      \begin{itemize}
+        \item Exportaciones $\times 2{,}5$: de \$37\,088 a \$93\,993 mill. (cobre y oro).
+        \item Superávit comercial récord: \$35\,433 mill. en 2025.
+        \item Servicios: déficit estructural creciente ($-2\,715 \to -8\,230$).
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Cuenta corriente: composición del saldo}
+  \small
+  \begin{block}{Composición}
+    El saldo de la \textbf{balanza comercial de bienes} (exportaciones $-$ importaciones) frente al saldo de \textbf{servicios}, año a año.
+  \end{block}
+  \begin{itemize}
+    \item \textbf{Bienes (positivo y creciente):} el Perú vende más de lo que compra en mercancías; la brecha se dispara desde 2021 por los altos precios de metales.
+    \item \textbf{Servicios (siempre negativo):} pagamos más fletes, seguros y turismo al exterior de lo que cobramos $\Rightarrow$ déficit estructural.
+    \item El superávit de bienes supera ampliamente al déficit de servicios, y ese diferencial determina el paso de la cuenta corriente a superávit.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Cuenta corriente: variación interanual}
+  \small
+  \begin{itemize}
+    \item \textbf{2019 $\to$ 2020 (mejora):} no fue por vender más, sino por \emph{comprar menos}. El confinamiento frenó la inversión y el consumo importado.
+    \item \textbf{2020 $\to$ 2022 (deterioro):} al reactivarse, las importaciones se dispararon y los fletes encarecieron el valor CIF de lo importado; el saldo se volvió muy negativo.
+    \item \textbf{2022 $\to$ 2023 (giro):} el precio del cobre/oro elevó el valor exportado más rápido que las importaciones $\Rightarrow$ la brecha se cierra y pasa a superávit.
+    \item \textbf{2023 $\to$ 2025 (aceleración):} volumen minero + precios altos sostenidos; la balanza de bienes crece más rápido que el déficit de servicios e ingreso primario.
+  \end{itemize}
+  \centering\footnotesize\itshape Un saldo se fortalece cuando las exportaciones (precio $\times$ volumen) crecen por encima de las importaciones.
+\end{frame}
+
+\begin{frame}{Cuenta corriente: los tres quiebres}
+  \centering
+  \vspace{0.4em}
+  \newcommand{\quiebre}[3]{%
+    \begin{tikzpicture}
+      \node[draw=navy,line width=0.6pt,rounded corners=4pt,fill=navy!5,
+            text width=3.1cm,minimum height=3.4cm,align=flush left,
+            inner sep=8pt,anchor=north] {%
+        {\color{navy}\bfseries #1}\\[1pt]{\color{navy!70}\footnotesize #2}\par\vspace{4pt}
+        \footnotesize #3};
+    \end{tikzpicture}}
+  \begin{columns}[T]
+    \begin{column}{0.32\textwidth}\centering
+      \quiebre{2020}{COVID-19}{Cuarentenas: las importaciones caen más que las exportaciones $\Rightarrow$ superávit \emph{atípico} y transitorio.}
+    \end{column}
+    \begin{column}{0.32\textwidth}\centering
+      \quiebre{2021--2022}{Choque de costos}{Fletes $\times 5$ + guerra Rusia--Ucrania + rebote de demanda interna $\Rightarrow$ déficit récord ($-10\,060$).}
+    \end{column}
+    \begin{column}{0.32\textwidth}\centering
+      \quiebre{2023--2025}{Bonanza}{Cobre y oro en máximos $\Rightarrow$ superávit creciente hasta $+12\,005$ en 2025.}
+    \end{column}
+  \end{columns}
+  \vspace{0.9em}
+  {\footnotesize\itshape Factor común de los tres episodios: la evolución de los términos de intercambio.}
+\end{frame}
+
+\begin{frame}{Ingreso primario y secundario}
+  \begin{columns}[T]
+    \begin{column}{0.58\textwidth}
+      \centering
+      \grafico{grafico_3_ingreso_primario_secundario.png}
+    \end{column}
+    \begin{column}{0.42\textwidth}\footnotesize
+      \begin{itemize}
+        \item \textbf{Ingreso primario:} principal lastre ($-9\,083 \to -23\,104$).
+        \item \textbf{Ingreso secundario:} remesas estables ($2\,943 \to 5\,299$).
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Ingreso primario vs. secundario: la diferencia clave}
+  \small
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \textbf{Ingreso primario (renta)} \; {\color{acc}$\downarrow$ resta}
+      \begin{itemize}\footnotesize
+        \item Utilidades y dividendos que las mineras extranjeras \textbf{envían a sus matrices}, más intereses de deuda.
+        \item \textbf{Procíclico:} si sube el precio del cobre, suben las exportaciones \emph{pero también} las utilidades que salen del país.
+        \item Por eso crece en paralelo al superávit comercial y lo modera.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \textbf{Ingreso secundario (transferencias)} \; {\color{acc}$\uparrow$ suma}
+      \begin{itemize}\footnotesize
+        \item Sobre todo \textbf{remesas} de peruanos en el exterior: entran sin contraparte.
+        \item Flujo \textbf{estable y resiliente}, incluso en crisis $\Rightarrow$ actúa como amortiguador.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{0.6em}
+  \centering\footnotesize\itshape El auge de precios que expande las exportaciones también incrementa la salida de utilidades mineras.
+\end{frame}
+
+\begin{frame}{Ingreso primario: profundización del déficit}
+  \small
+  \begin{itemize}
+    \item El déficit pasa de $-9\,083$ (2016) a $-23\,104$ (2025): casi se triplica, pero \textbf{no es una señal negativa por sí sola}.
+    \item Crece \emph{porque} las mineras ganan más: a mayor precio del cobre/oro, mayores utilidades $\Rightarrow$ mayor repatriación de dividendos.
+    \item Es la \textbf{contracara} del auge exportador: el mismo shock de precios que infla las exportaciones infla la salida de rentas.
+    \item Debe leerse neto contra la balanza de bienes; en ese neto, el país gana.
+  \end{itemize}
+  \centering\footnotesize\itshape Un mayor déficit refleja mayor rentabilidad minera, no un deterioro de la posición externa.
+\end{frame}
+
+\begin{frame}{Cuenta financiera: el espejo de la corriente}
+  \begin{columns}[T]
+    \begin{column}{0.58\textwidth}
+      \centering
+      \grafico{grafico_4_cf_componentes.png}
+    \end{column}
+    \begin{column}{0.42\textwidth}\footnotesize
+      \begin{itemize}
+        \item 2016--2022: negativa = Perú \textbf{importador neto de capitales}. Pico en 2021 ($-15\,385$).
+        \item \textbf{2023:} se vuelve positiva ($+426$): el país pasa a \textbf{prestamista neto}.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Cuenta financiera: financiamiento externo}
+  \small
+  \begin{block}{Convención de signo (MBPI6)}
+    Signo \textbf{negativo} $\Rightarrow$ entrada de capitales (financiamiento externo). Signo \textbf{positivo} $\Rightarrow$ salida de capitales o acumulación de activos externos.
+  \end{block}
+  \begin{itemize}\footnotesize
+    \item Mientras la cuenta corriente fue \textbf{deficitaria} (2016--2022), la financiera fue \textbf{negativa}: el déficit se cubría con inversión extranjera, bonos y créditos.
+    \item Al pasar la corriente a \textbf{superávit} (2023), el país deja de necesitar financiamiento y empieza a \textbf{colocar recursos afuera}.
+    \item \textbf{2021 (pico de $-15\,385$):} fuerte entrada de capitales en plena reactivación pospandemia, para financiar el rebote de importaciones.
+    \item Por identidad contable, un superávit en cuenta corriente implica que el país presta al resto del mundo.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Errores y Omisiones Netos}
+  \small
+  \begin{itemize}
+    \item Es una \textbf{partida de ajuste}: como la BP se arma con miles de fuentes distintas, los registros nunca calzan perfecto.
+    \item Recoge esa diferencia estadística para que la identidad contable \textbf{cierre} (cuadre a cero).
+    \item \textbf{No es una cuenta económica real}, sino un residuo; por eso su signo cambia todos los años (de $+911$ en 2019 a $-7\,492$ en 2025).
+    \item Un valor muy grande sugiere flujos no capturados bien (p. ej. movimientos de capital difíciles de medir), por lo que se vigila pero no se interpreta como tendencia.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Reservas Internacionales Netas}
+  \begin{columns}[T]
+    \begin{column}{0.58\textwidth}
+      \centering
+      \grafico{grafico_6_resultado_bp_rin.png}
+    \end{column}
+    \begin{column}{0.42\textwidth}\footnotesize
+      \begin{itemize}
+        \item $\Delta RIN$ = Resultado BP $+$ Efecto valuación.
+        \item Fuerte acumulación en 2019, 2024 y \textbf{2025} ($+11\,227$ mill.).
+        \item 2025: resultado BP ($+7\,855$) + efecto valuación por el \textbf{alza del oro} ($+3\,373$).
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Reservas Internacionales Netas: variación anual}
+  \small
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \textbf{Años que \alert{suben} (2019, 2024, 2025)}
+      \begin{itemize}\footnotesize
+        \item Resultado de BP positivo (entran más divisas de las que salen).
+        \item En 2025 se suma el \textbf{efecto valuación}: el oro que ya tenía el BCRP vale más, sin que entre un solo dólar nuevo.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \textbf{Años que \alert{bajan} (2018, 2022, 2023)}
+      \begin{itemize}\footnotesize
+        \item Resultado de BP negativo: el déficit externo o la salida de capitales obligó a usar reservas.
+        \item 2023 coincide con El Niño, ciclón Yaku y conflictos $\Rightarrow$ menos exportaciones y más presión.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{0.7em}
+  \begin{block}{Determinantes de la variación}
+    \footnotesize El cambio en las reservas responde a dos factores: el \textbf{resultado de la balanza de pagos} del año y el \textbf{efecto valuación} (precio del oro y de las divisas). La suma de ambos explica el $\Delta$ de reservas.
+  \end{block}
+\end{frame}
+
+\section{Factores de Riesgo}
+\begin{frame}{Vulnerabilidades externas}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \textbf{Choques de oferta y clima}
+      \begin{itemize}\footnotesize
+        \item \textbf{El Niño:} en 2023 la anchoveta cayó $\sim$51\% y hubo recesión técnica. El BCRP (2026) ya asume un escenario \emph{fuerte}.
+        \item Alta concentración en minería: paradas o conflictos golpean la balanza comercial.
+        \item Términos de intercambio en su nivel más alto desde 1950 $\Rightarrow$ fortaleza hoy, pero \textbf{reversible}.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \textbf{Entorno internacional}
+      \begin{itemize}\footnotesize
+        \item Fragmentación del comercio y amenazas arancelarias elevan la incertidumbre.
+        \item Dependencia de la demanda de \textbf{China} (principal comprador de cobre).
+        \item Riesgo de volatilidad financiera y salida de capitales.
+        \item Las \textbf{RIN} son la principal línea de defensa.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vfill
+\end{frame}
+
+\section{Conclusiones}
+\begin{frame}{Conclusiones y perspectivas}
+  \begin{itemize}
+    \item El sector externo peruano pasó de \textbf{déficits recurrentes} a \textbf{superávits récord}, impulsado por la balanza comercial de bienes y los altos precios de los metales.
+    \item El mismo factor alimentó el déficit del ingreso primario (utilidades mineras) $\Rightarrow$ carácter \textbf{procíclico} de las cuentas externas.
+    \item El giro de la CC se reflejó en la CF y en un fuerte fortalecimiento de las \textbf{RIN} (2024--2025).
+    \item BCRP (2026): superávit de CC de 3{,}5\% a 4{,}3\% del PBI; camino a \textbf{cinco años consecutivos} de superávit (2023--2027).
+    \item \textbf{Reto:} manejar la dependencia de los metales, mitigar El Niño y sostener colchones fiscales y de reservas.
+  \end{itemize}
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \centering
+  \vspace{2.2cm}
+  {\color{white}\Huge ¡Gracias!}\\[0.8em]
+  {\color{white!85}\Large Preguntas y Comentarios}
+\end{frame}
+}
+
+\end{document}
